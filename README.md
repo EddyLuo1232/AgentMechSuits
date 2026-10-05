@@ -1,4 +1,4 @@
-<h1 align="center">[<strong>NeurIPS 2026</strong>] AgentLens: Interpretable Safety Steering via Mechanistic Subspaces for Multi-Turn Coding Agent</h1>
+<h1 align="center">[<strong>NeurIPS 2026</strong>] Agent MechSuits: Mechanistic Subspace Safety Steering for Multi-Turn CLI Agents</h1>
 
 <p align="center"><strong>Weidi Luo¹ · Qiming Zhang² · Yihao Quan³ · Mingyu Jin³ · Jie Cai⁴ · Chaowei Xiao⁵ · Jingcheng Niu⁶ · Zhen Xiang¹†</strong></p>
 
@@ -13,9 +13,9 @@
   <a href="https://arxiv.org/pdf/2606.22673"><img alt="Paper" src="https://img.shields.io/badge/arXiv-2606.22673-B31B1B?style=flat-square"></a>
 </p>
 
-This is the official repository for the paper **AgentLens: Interpretable Safety Steering via Mechanistic Subspaces for Multi-Turn Coding Agent**.
+This is the official repository for the paper **Agent MechSuits: Mechanistic Subspace Safety Steering for Multi-Turn CLI Agents**.
 
-AgentLens is a white-box safety framework for multi-turn coding agents. Instead of treating agent safety as a one-time task-level decision, AgentLens monitors the agent during execution. It trains lightweight linear probes on step-level hidden states, detects harmful execution states at runtime, and steers the model in a sparse safety-relevant subspace when risk is detected.
+Agent MechSuits is a white-box safety framework for multi-turn CLI agents. Instead of treating agent safety as a one-time task-level decision, Agent MechSuits monitors the agent during execution. It trains lightweight linear probes on step-level hidden states, detects harmful execution states at runtime, and steers the model in a sparse safety-relevant subspace when risk is detected.
 
 The paper also introduces **MAS (Mechanistic Agent Safety)**, a step-annotated benchmark for mechanistic safety analysis of coding agents. This repository includes MAS splits for three white-box coding-agent backbones:
 
@@ -49,7 +49,7 @@ python agentlens.py --openrouter_api_key your_key
 
 ## 📊 Data
 
-MAS contains step-level coding-agent trajectories with labels:
+MAS contains step-level CLI agent trajectories with labels:
 
 - `label = 0`: benign or safety-aware/refusal step
 - `label = 1`: harmful execution step
@@ -88,9 +88,9 @@ results/meta-llama/Llama-3.1-8B-Instruct/LLaMA/hidden_state/<layer>/best_model.c
 embeddings/meta-llama/Llama-3.1-8B-Instruct/LLaMA/hidden_state/<layer>/precomputed_embeddings.json
 ```
 
-## 🧭 AgentLens Steering
+## 🧭 Agent MechSuits Steering
 
-Run adaptive AgentLens steering with:
+Run adaptive Agent MechSuits steering with:
 
 ```bash
 python agentlens.py \
@@ -143,7 +143,7 @@ Evaluate safety of generated trajectories:
 ```bash
 python eval.py \
   --task safety \
-  --input results/LLaMA/agentlens.json \
+  --input results/LLaMA/Agent_MechSuits.json \
   --field after_steer \
   --name llama_agentlens
 ```
@@ -153,7 +153,7 @@ Evaluate output collapse before/after steering:
 ```bash
 python eval.py \
   --task collapse \
-  --input results/LLaMA/agentlens.json \
+  --input results/LLaMA/Agent_MechSuits.json \
   --name llama_agentlens
 ```
 
