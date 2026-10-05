@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <a href="https://eddyluo.com/agentlensweb/"><img alt="Project Page" src="https://img.shields.io/badge/Project%20Page-Visit-4F46E5?style=flat-square"></a>
+  <a href="https://eddyluo.com/Agent-MechSuits/"><img alt="Project Page" src="https://img.shields.io/badge/Project%20Page-Visit-4F46E5?style=flat-square"></a>
   <a href="https://arxiv.org/pdf/2606.22673"><img alt="Paper" src="https://img.shields.io/badge/arXiv-2606.22673-B31B1B?style=flat-square"></a>
 </p>
 
